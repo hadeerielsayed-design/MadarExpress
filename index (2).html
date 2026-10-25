@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدار للخدمات اللوجستية والشحن | Madar Express</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .madar-primary { background-color: #0d233a; }
+        .madar-primary-text { color: #0d233a; }
+        .madar-accent { background-color: #d97706; } /* البرتقالي/الذهبي من اللوجو */
+        .madar-accent-text { color: #d97706; }
+        .madar-accent-border { border-color: #d97706; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- شريط الإعلانات العلوي -->
+    <div class="madar-primary text-white text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fas fa-phone-alt madar-accent-text ml-1"></i> الخط الساخن: 19500</span>
+                <span><i class="fas fa-envelope madar-accent-text ml-1"></i> support@madar-express.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-amber-600/30 text-amber-300 px-2 py-0.5 rounded text-[11px]">خدمة توصيل لجميع المحافظات</span>
+                <button onclick="openLoginModal()" class="text-white hover:text-amber-400 transition font-semibold cursor-pointer">
+                    <i class="fas fa-user-circle ml-1"></i> تسجيل الدخول
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- شريط التنقل الرئيسي (Navbar) -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- الشعار -->
+            <div class="flex items-center gap-3">
+                <!-- استخدام اللوجو الرسمي -->
+                <div class="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center p-1 border border-amber-500/30">
+                    <img src="Gemini_Generated_Image_dx7w2tdx7w2tdx7w (1).jpeg" alt="Madar Logo" class="w-full h-full object-contain rounded-full">
+                </div>
+                <div>
+                    <span class="text-2xl font-black madar-primary-text tracking-wider">MA<span class="madar-accent-text">D</span>AR</span>
+                    <span class="block text-[10px] text-gray-500 font-semibold tracking-widest">EXPRESS LOGISTICS</span>
+                </div>
+            </div>
+
+            <!-- الروابط -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
+                <a href="#hero" class="madar-accent-text transition">الرئيسية</a>
+                <a href="#track" class="text-gray-600 hover:text-amber-600 transition">تتبع شحنتك</a>
+                <a href="#calculator" class="text-gray-600 hover:text-amber-600 transition">حاسبة الأسعار</a>
+                <a href="#services" class="text-gray-600 hover:text-amber-600 transition">خدماتنا</a>
+                <a href="#careers" class="text-gray-600 hover:text-amber-600 transition">انضم لفرسان مدار</a>
+                <a href="#about" class="text-gray-600 hover:text-amber-600 transition">عن الشركة</a>
+            </nav>
+
+            <!-- زر اطلب شحنة -->
+            <div class="flex items-center gap-3">
+                <a href="#calculator" class="madar-accent hover:bg-amber-700 text-white px-5 py-2.5 rounded-xl font-bold shadow-lg shadow-amber-600/20 transition transform hover:-translate-y-0.5">
+                    اطلب شحنة الآن
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- واجهة البطل (Hero Section) -->
+    <section id="hero" class="relative madar-primary text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="bg-amber-600/20 text-amber-400 border border-amber-500/30 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider inline-block mb-4">
+                    رائدة الشحن السريع في مصر
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                    شحن سريع، آمن، وموثوق <span class="madar-accent-text">لكل ربوع مصر</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    نربط المتاجر الإلكترونية والشركات والأفراد بعملائهم عبر شبكة واسعة تضم أكثر من 300 مندوب محترف ونظام تشغيل متطور يضمن وصول شحنتك في الوقت المحدد وبأعلى معايير الجودة.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#track" class="madar-accent hover:bg-amber-700 text-white font-bold px-8 py-4 rounded-xl shadow-xl transition flex items-center gap-2">
+                        <i class="fas fa-search-location"></i> تتبع شحنتك الآن
+                    </a>
+                    <a href="#careers" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-8 py-4 rounded-xl transition flex items-center gap-2">
+                        <i class="fas fa-motorcycle"></i> انضم لفريق المندوبين
+                    </a>
+                </div>
+            </div>
+            <!-- صندوق تتبع سريع داخل الهيرو -->
+            <div class="bg-white text-gray-800 p-8 rounded-3xl shadow-2xl border border-gray-100">
+                <h3 class="text-xl font-bold madar-primary-text mb-2 flex items-center gap-2">
+                    <i class="fas fa-box-open madar-accent-text"></i> تتبع شحنتك الفوري
+                </h3>
+                <p class="text-sm text-gray-500 mb-6">أدخل رقم البوليصة أو الشحنة لمعرفة حالتها فوراً</p>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1">رقم الشحنة / البوليصة</label>
+                        <input type="text" id="quickTrackInput" placeholder="مثال: MDR-883921" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition">
+                    </div>
+                    <button onclick="performTracking()" class="w-full madar-primary text-white py-3.5 rounded-xl font-bold hover:bg-slate-900 transition shadow-md">
+                        استعلام عن الحالة
+                    </button>
+                </div>
+                <div id="quickTrackResult" class="mt-4 hidden p-4 bg-amber-50 border border-amber-200 rounded-xl text-sm">
+                    <!-- نتيجة التتبع التفاعلية -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تتبع الشحنات المتقدم -->
+    <section id="track" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-600 font-bold text-sm tracking-wider uppercase">نظام الشفافية المتكامل</span>
+                <h2 class="text-3xl font-black madar-primary-text mt-1">تتبع خط سير الشحنة مرحلة بمرحلة</h2>
+                <p class="text-gray-500 mt-2">تعرف على موقع شحنتك الحالي بدقة وحالة التسليم في مختلف المحافظات</p>
+            </div>
+
+            <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-lg">
+                <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                    <div class="flex-1">
+                        <input type="text" id="mainTrackInput" placeholder="أدخل رقم الشحنة (مثال: MDR-10293)" class="w-full px-5 py-4 bg-white border border-gray-300 rounded-2xl focus:ring-2 focus:ring-amber-500 outline-none text-lg">
+                    </div>
+                    <button onclick="showFullTrackingDetails()" class="madar-accent hover:bg-amber-700 text-white font-bold px-8 py-4 rounded-2xl shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fas fa-search"></i> تتبع
+                    </button>
+                </div>
+
+                <!-- مسار الشحنة (Timeline Mock) -->
+                <div id="trackingTimeline" class="hidden space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <div class="flex justify-between items-center mb-4 pb-3 border-b">
+                            <div>
+                                <span class="text-xs text-gray-500 block">رقم الشحنة: <strong id="resTrackingNum" class="text-gray-800"></strong></span>
+                                <span class="text-lg font-bold madar-primary-text">حالة الشحنة: <span class="text-amber-600">جارٍ التوصيل للمستلم</span></span>
+                            </div>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full">نشطة</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                                <i class="fas fa-check-circle madar-accent-text text-xl mb-1"></i>
+                                <span class="block text-xs font-bold text-gray-700">تم الاستلام من العميل</span>
+                                <span class="text-[10px] text-gray-500">منذ يومين</span>
+                            </div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200">
+                                <i class="fas fa-boxes madar-accent-text text-xl mb-1"></i>
+                                <span class="block text-xs font-bold text-gray-700">فرز وتجهيز المحافظات</span>
+                                <span class="text-[10px] text-gray-500">أمس، 02:00 م</span>
+                            </div>
+                            <div class="p-3 bg-amber-500 text-white rounded-xl shadow-md">
+                                <i class="fas fa-motorcycle text-xl mb-1"></i>
+                                <span class="block text-xs font-bold">مع المندوب الآن</span>
+                                <span class="text-[10px] text-amber-100">اليوم، 09:30 ص</span>
+                            </div>
+                            <div class="p-3 bg-gray-100 rounded-xl text-gray-400">
+                                <i class="fas fa-flag-checkered text-xl mb-1"></i>
+                                <span class="block text-xs font-bold">التسليم للعميل النهائي</span>
+                                <span class="text-[10px]">متوقع خلال ساعتين</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- حاسبة تكلفة الشحن التفاعلية -->
+    <section id="calculator" class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-600 font-bold text-sm tracking-wider uppercase">حاسبة الأسعار الذكية</span>
+                <h2 class="text-3xl font-black madar-primary-text mt-1">احسب تكلفة شحنتك فوراً</h2>
+                <p class="text-gray-500 mt-2">أسعار تنافسية وثابتة تناسب المتاجر الإلكترونية والشركات</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">محافظة الإرسال (من)</label>
+                        <select id="fromGov" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="cairo">القاهرة الكبرى</option>
+                            <option value="giza">الجيزة</option>
+                            <option value="alex">الإسكندرية</option>
+                            <option value="delta">محافظات الدلتا</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">محافظة الوصول (إلى)</label>
+                        <select id="toGov" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="cairo">القاهرة الكبرى</option>
+                            <option value="delta">الدلتا والقناة</option>
+                            <option value="upper">صعيد مصر</option>
+                            <option value="alex">الإسكندرية والساحل</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">وزن الشحنة التقريبي (كيلو)</label>
+                        <input type="number" id="weightKg" value="5" min="1" max="50" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">نوع الخدمة</label>
+                        <select id="serviceType" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                            <option value="standard">شحن عادي (48 - 72 ساعة)</option>
+                            <option value="express">شحن سريع (خلال 24 ساعة)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="calculateShipping()" class="w-full madar-accent hover:bg-amber-700 text-white py-4 rounded-xl font-bold transition shadow-lg text-lg">
+                    احسب التكلفة التقديرية
+                </button>
+
+                <div id="costResult" class="mt-6 hidden p-6 bg-slate-900 text-white rounded-2xl text-center">
+                    <span class="text-gray-400 text-sm block mb-1">التكلفة المتوقعة للشحنة:</span>
+                    <span id="priceDisplay" class="text-3xl font-black madar-accent-text">0 جنيه مصري</span>
+                    <span class="block text-xs text-gray-400 mt-2">* شامل تحصيل قيمة النقدية عند الاستلام (COD)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-600 font-bold text-sm tracking-wider uppercase">لماذا تختار مدار؟</span>
+                <h2 class="text-3xl font-black madar-primary-text mt-1">حلول لوجستية متكاملة لنمو أعمالك</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 madar-accent text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold madar-primary-text mb-3">التوصيل للباب الأخير</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">فريق من 300 مندوب محترف يغطون مختلف المحافظات لضمان وصول شحنات المتاجر في أسرع وقت وبأعلى أمان.</p>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 madar-accent text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold madar-primary-text mb-3">تحصيل النقدية (COD)</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">إدارة دقيقة وموثوقة لتحصيل أموال المبيعات وإيداعها في حسابات الشركات بانتظام وبدون أي تأخير.</p>
+                </div>
+                <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-xl transition">
+                    <div class="w-14 h-14 madar-accent text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold madar-primary-text mb-3">دعم عملاء على مدار الساعة</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">فريق دعم فني متكامل ومتابعة لحظية لحل أي استفسارات أو شكاوى للعملاء والمستلمين بكل احترافية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم انضم لفرسان التوصيل (Careers & HR) -->
+    <section id="careers" class="py-16 madar-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="bg-amber-600/30 text-amber-400 text-xs font-bold px-3 py-1.5 rounded-full inline-block mb-4">فرص العمل والمسار الوظيفي</span>
+                    <h2 class="text-3xl sm:text-4xl font-black mb-6">انضم إلى فريق "فرسان مدار"</h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        نؤمن بأن موظفينا هم سر نجاحنا. نوفر بيئة عمل محفزة، مساراً واضحاً للترقي (من مندوب إلى مشرف محطة)، حوافز أداء دورية، وتدريباً مستمراً لضمان تطورك المهني.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-200">
+                        <li><i class="fas fa-check-circle madar-accent-text ml-2"></i> مسار ترقي واضح (مندوب ➔ كبار المندوبين ➔ قائد فريق ➔ مشرف محطة)</li>
+                        <li><i class="fas fa-check-circle madar-accent-text ml-2"></i> برامج تدريبية متكاملة في السلامة والأداء</li>
+                        <li><i class="fas fa-check-circle madar-accent-text ml-2"></i> حوافز ومكافآت "مندوب الشهر"</li>
+                    </ul>
+                </div>
+                <div class="bg-white text-gray-800 p-8 rounded-3xl shadow-2xl">
+                    <h3 class="text-xl font-bold madar-primary-text mb-2">سجل بياناتك للانضمام كمندوب</h3>
+                    <p class="text-xs text-gray-500 mb-6">املأ النموذج وسنتواصل معك خلال 48 ساعة</p>
+                    <form onsubmit="submitApplication(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">الاسم الكامل</label>
+                            <input type="text" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">رقم الهاتف (واتساب)</label>
+                            <input type="tel" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">المحافظة المقيم بها</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                                <option>القاهرة الكبرى</option>
+                                <option>الإسكندرية</option>
+                                <option>الدلتا</option>
+                                <option>الصعيد</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full madar-accent hover:bg-amber-700 text-white py-3.5 rounded-xl font-bold transition shadow-md">
+                            إرسال طلب الانضمام
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="bg-slate-950 text-white py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center p-1 border border-amber-500/30">
+                        <img src="Gemini_Generated_Image_dx7w2tdx7w2tdx7w (1).jpeg" alt="Madar Logo" class="w-full h-full object-contain rounded-full">
+                    </div>
+                    <span class="text-xl font-black text-white">MA<span class="madar-accent-text">D</span>AR</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    شركة مصرية رائدة في الخدمات اللوجستية والشحن السريع، نخدم آلاف العملاء والشركات بكفاءة وموثوقية عالية.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-amber-400 mb-4">روابط سريعة</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#hero" class="hover:text-white transition">الرئيسية</a></li>
+                    <li><a href="#track" class="hover:text-white transition">تتبع الشحنات</a></li>
+                    <li><a href="#calculator" class="hover:text-white transition">حاسبة الأسعار</a></li>
+                    <li><a href="#careers" class="hover:text-white transition">وظائف المندوبين</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-amber-400 mb-4">خدمات العملاء</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white transition">السياسات والشروط</a></li>
+                    <li><a href="#" class="hover:text-white transition">الأسئلة الشائعة</a></li>
+                    <li><a href="#" class="hover:text-white transition">الدعم الفني والشكاوى</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-amber-400 mb-4">تواصل معنا</h4>
+                <p class="text-sm text-gray-400 mb-2"><i class="fas fa-map-marker-alt madar-accent-text ml-2"></i> القاهرة، مصر</p>
+                <p class="text-sm text-gray-400 mb-2"><i class="fas fa-phone madar-accent-text ml-2"></i> 19500</p>
+                <p class="text-sm text-gray-400"><i class="fas fa-envelope madar-accent-text ml-2"></i> info@madar-express.com</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-slate-900 text-center text-xs text-gray-500">
+            جميع الحقوق محفوظة لشركة مدار للخدمات اللوجستية والشحن © 2026
+        </div>
+    </footer>
+
+    <!-- نافذة تسجيل الدخول المنبثقة (Login Modal) -->
+    <div id="loginModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 relative shadow-2xl">
+            <button onclick="closeLoginModal()" class="absolute top-4 left-4 text-gray-400 hover:text-gray-700 text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-2xl font-black madar-primary-text mb-2">تسجيل الدخول</h3>
+            <p class="text-sm text-gray-500 mb-6">اختر نوع الحساب وادخل بياناتك للمتابعة</p>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">البريد الإلكتروني أو رقم الهاتف</label>
+                    <input type="text" placeholder="name@example.com" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 mb-1">كلمة المرور</label>
+                    <input type="password" placeholder="••••••••" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-amber-500">
+                </div>
+                <button onclick="alert('تم تسجيل الدخول بنجاح! مرحباً بك في مدار.')" class="w-full madar-accent hover:bg-amber-700 text-white py-3.5 rounded-xl font-bold transition shadow-md">
+                    دخول
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- كود الجافاسكريبت للتفاعل -->
+    <script>
+        function performTracking() {
+            const val = document.getElementById('quickTrackInput').value;
+            const res = document.getElementById('quickTrackResult');
+            if(!val) {
+                alert('الرجاء إدخال رقم الشحنة');
+                return;
+            }
+            res.classList.remove('hidden');
+            res.innerHTML = `<strong>حالة الشحنة (${val}):</strong> جارٍ التوصيل اليوم مع المندوب (الحالة: نشطة ومستقرة).`;
+        }
+
+        function showFullTrackingDetails() {
+            const val = document.getElementById('mainTrackInput').value;
+            const timeline = document.getElementById('trackingTimeline');
+            const numDisp = document.getElementById('resTrackingNum');
+            if(!val) {
+                alert('الرجاء إدخال رقم الشحنة الأساسي');
+                return;
+            }
+            numDisp.textContent = val;
+            timeline.classList.remove('hidden');
+        }
+
+        function calculateShipping() {
+            const weight = document.getElementById('weightKg').value;
+            const type = document.getElementById('serviceType').value;
+            let base = 60;
+            if(type === 'express') base = 95;
+            let total = base + (weight * 5);
+            
+            const costRes = document.getElementById('costResult');
+            const priceDisp = document.getElementById('priceDisplay');
+            costRes.classList.remove('hidden');
+            priceDisp.textContent = total + ' جنيه مصري';
+        }
+
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+
+        function submitApplication(e) {
+            e.preventDefault();
+            alert('تم إرسال طلب الانضمام بنجاح! سيتم التواصل معك قريباً.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
